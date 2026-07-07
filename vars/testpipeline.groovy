@@ -1,22 +1,21 @@
-def call(Map configMap){
-    pipeline {
-    agent {
-        node {
-            label 'Java' 
-        } 
-    } 
 
-       stages{
-        stage('Build'){
-            steps{
-                echo "build"
-            }
+def call(Map configMap) {
+
+    pipeline {
+        agent {
+            label 'Java'
         }
-       }
-       stage('test'){
-            steps{
-                echo "test"
+
+        stages {
+
+            stage('Build') {
+                steps {
+                    echo "Project  : ${configMap.project}"
+                    echo "Component: ${configMap.component}"
+                }
             }
+
         }
-       }
+    }
+
 }

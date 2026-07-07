@@ -89,7 +89,7 @@ def call(Map configMap){
                             def alertCount = sh(
                                 script: """
                                     curl -sf \
-                                        -H "Authorization: Bearer \$GITHUB_TOKEN_SCAN" \
+                                        -H "Authorization: Bearer \$Dependaboard" \
                                         -H "Accept: application/vnd.github+json" \
                                         -H "X-GitHub-Api-Version: 2022-11-28" \
                                         "https://api.github.com/repos/${repoPath}/dependabot/alerts?state=open&per_page=100" \

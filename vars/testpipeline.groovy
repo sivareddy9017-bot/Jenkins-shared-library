@@ -54,11 +54,11 @@ def call(Map configMap){
                     }
                 }
             }
-         /*    stage ('SonarQube Analysis'){
+            stage ('SonarQube Analysis'){
                 steps {
                     script {
                         def scannerHome = tool name: 'sonar-8.0' // agent configuration
-                        withSonarQubeEnv('sonar-scanner') { // analysing and uploading to server
+                        withSonarQubeEnv('sonar-server') { // analysing and uploading to server
                             sh "${scannerHome}/bin/sonar-scanner"
                         }
                     }
@@ -78,7 +78,7 @@ def call(Map configMap){
                         }
                     }
                 }
-            } */
+            } 
             stage('Dependabot Alerts Check') {
                 steps {
                     script {

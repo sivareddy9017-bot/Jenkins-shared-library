@@ -58,7 +58,7 @@ def call(Map configMap){
                 steps {
                     script {
                         def scannerHome = tool name: 'sonar-8.0' // agent configuration
-                        withSonarQubeEnv('sonar-server') { // analysing and uploading to server
+                        withSonarQubeEnv('sonar-scanner') { // analysing and uploading to server
                             sh "${scannerHome}/bin/sonar-scanner"
                         }
                     }

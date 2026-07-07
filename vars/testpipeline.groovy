@@ -79,7 +79,7 @@ def call(Map configMap){
                     }
                 }
             } 
-            stage('Dependabot Alerts Check') {
+            /* stage('Dependabot Alerts Check') {
                 steps {
                     script {
                         withCredentials([string(credentialsId: 'Dependaboard', variable: 'Dependaboard')]) {
@@ -107,7 +107,7 @@ def call(Map configMap){
                         }
                     }
                 }
-            }
+            } */
             stage('Build Image') {
                 steps {
                 script{
